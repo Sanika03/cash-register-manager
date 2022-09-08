@@ -28,7 +28,7 @@ nextButton.addEventListener("click", () => {
 });
 
 checkButton.addEventListener("click", function validateBillAndCashAmount() {
-    
+
 hideMessage();
 
 if(isNaN(cashGiven.value)==true){
