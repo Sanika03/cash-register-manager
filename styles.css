@@ -139,6 +139,17 @@ th, td{
     padding: 0rem 0.5rem;
 }
 
+/** hover **/
+#next-button:hover{
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+}
+
+#check-button:hover{
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+}
+
 @media only screen and (max-width: 600px){
     input {
         text-align: center;
