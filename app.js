@@ -7,9 +7,6 @@ var message = document.querySelector("#message-display");
 var divReturned = document.querySelector("#div-cash-given");
 var returnedChange = document.querySelector("#returned-change");
 
-// divReturned.style.display = "none";
-// returnedChange.style.display = "none";
-
 var notes = [2000, 500, 100, 20, 10, 5, 1];
 
 nextButton.addEventListener("click", () => {
@@ -24,6 +21,9 @@ nextButton.addEventListener("click", () => {
             nextButton.style.display = "none";
             divReturned.style.display = "block";
         }
+        else{
+            showMessage("Amount given should be greater than zero");
+        }
     }
 });
 
@@ -36,7 +36,7 @@ if(isNaN(cashGiven.value)==true){
 } 
 else {
     if( cashGiven.value > 0){
-        if(cashGiven.value >= billAmount.value){
+        if(Number(cashGiven.value) >= Number(billAmount.value)){
             var amountToBeReturned = cashGiven.value - billAmount.value;
             calculateChange(amountToBeReturned);
         } 
@@ -52,10 +52,10 @@ else {
 
 function calculateChange(amountToBeReturned){
     returnedChange.style.display = "block";
-    for(var i=0; i < notes.length; i++){
-        var numberOfNotes = Math.trunc(amountToBeReturned / notes[i]);
-        noOfNotes[i].innerText= numberOfNotes;
+    for(let i=0; i < notes.length; i++){
+        const numberOfNotes = Math.trunc(amountToBeReturned / notes[i]);
         amountToBeReturned = amountToBeReturned % notes[i];
+        noOfNotes[i].innerText = numberOfNotes;
     }
 }
 
