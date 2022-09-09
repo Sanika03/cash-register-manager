@@ -119,6 +119,7 @@ th, td{
 .footer .footer-header {
     font-weight: bold;
     font-size: large;
+    color: var(--secondary-color);
 }
 
 .footer .link{
@@ -147,6 +148,10 @@ th, td{
 
 #check-button:hover{
     background-color: var(--text-color);
+    color: var(--secondary-color);
+}
+
+.fa:hover{
     color: var(--secondary-color);
 }
 
